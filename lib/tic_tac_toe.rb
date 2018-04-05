@@ -43,11 +43,11 @@ def position_taken?(location)
   board[location] != " " && board[location] != ""
 end
 
-def valid_move?(board, index)
+def valid_move?(index)
   index.between?(0,8) && !position_taken?(board, index)
 end
 
-def turn(board)
+def turn
   puts "Please enter 1-9:"
   input = gets.strip
   index = input_to_index(input)
@@ -59,7 +59,7 @@ def turn(board)
   end
 end
 
-def turn_count(board)
+def turn_count
   turns = 0
 board.each do |position|
   if position == "X" || position == "O"
@@ -70,7 +70,7 @@ turns
 end
 
 
-def current_player(board)
+def current_player
   turn_count(board)
   if turn_count(board) % 2 == 0
     "X"
@@ -79,7 +79,7 @@ def current_player(board)
 end
 end
 
-def won?(board)
+def won?
   WIN_COMBINATIONS.each do |combo|
     if board[combo[0]] == "X" && board[combo[1]] == "X" && board[combo[2]] == "X"
     return combo
@@ -90,11 +90,11 @@ def won?(board)
   return false
 end
 
-def full?(board)
+def full?
   board.all? {|space| space == "X" || space == "O"}
 end
 
-def draw?(board)
+def draw?
   if !won?(board) && full?(board)
   true
 else
@@ -102,7 +102,7 @@ else
 end
 end
 
-def over?(board)
+def over?
   if won?(board) || draw?(board)
     true
 else
