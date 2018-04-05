@@ -4,4 +4,11 @@ class TicTacToe
     @board = [" "," ", " ", " ", " ", " ", " ", " ", " "]
   end
 
+  def board=[" "," ", " ", " ", " ", " ", " ", " ", " "]
+     @board = [" "," ", " ", " ", " ", " ", " ", " ", " "]
+   end
+
+   def board
+     @board
+   end
 end
