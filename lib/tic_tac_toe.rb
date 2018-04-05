@@ -53,11 +53,7 @@ def turn(board)
   index = input_to_index(input)
   if valid_move?(board, index)
     display_board(board)
-<<<<<<< HEAD
     move(board, index, current_player(board))
-=======
-    move(board, index, current_player)
->>>>>>> 8b43ba63dd6412cf01497524ab0a29965b888be5
   else
     turn(board)
   end
